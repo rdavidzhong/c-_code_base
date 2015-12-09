@@ -1,6 +1,6 @@
 #!/bin/bash
+# To sync up all changes to github once
 
-#echo hello world
 git status
 git add -A
 git commit -a -m"Sync"
