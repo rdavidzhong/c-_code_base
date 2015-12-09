@@ -50,11 +50,11 @@ string addBinary(string a, string b) {
     
     for(int i =0; i<maxLength;i++)
     {
-            int ai = i<a.size()? a[i]-'0':0;
-            int bi = i<b.size()?b[i]-'0':0;
-            int val = (ai+bi+carry)%2;
-            carry = (ai+bi+carry)/2;
-            result.insert(result.begin(), val+'0');
+        int ai = i<a.size()? a[i]-'0':0;
+        int bi = i<b.size()? b[i]-'0':0;
+        int val = (ai+bi+carry)%2;
+        carry = (ai+bi+carry)/2;
+        result.insert(result.begin(), val+'0');
     }
     
     if (carry == 1)
@@ -72,6 +72,5 @@ int main(int argc, const char * argv[]) {
     
     cout << result << endl;
     
-
     return 0;
 }
