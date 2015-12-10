@@ -28,7 +28,6 @@
 
  Hide Tags Math
  
-
  */
 
 #include <iostream>
@@ -40,12 +39,24 @@ using namespace std;
 int reverse(int x)
 {
  
-    
+    int result = 0, remainder = 0;
+    while(x != 0)
+    {
+        result = result*10;
+        remainder = x%10;
+        result = result + remainder;
+        x = x/10;
+    }
+    return result;
 }
 
 int main(int argc, const char * argv[]) {
 
    
+    int test1 = -123;
+    int test2 = 123;
+    cout << reverse(test1) << endl;
+    cout << reverse(test2) << endl;
     
     return 0;
 }
