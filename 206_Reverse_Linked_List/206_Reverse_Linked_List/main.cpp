@@ -30,7 +30,23 @@ struct ListNode {
      ListNode(int x) : val(x), next(NULL) {}
 };
 
+ListNode* reverseList(ListNode* head)
+{
+    ListNode *prev = NULL;
+    ListNode* temp;
+    while (head != NULL)
+    {
+        temp = head->next;
+        head->next = prev;
+        prev = head;
+        head = temp;
+    }
+   return prev;
+}
+
+
 int main(int argc, const char * argv[]) {
+    
     
     return 0;
 }
