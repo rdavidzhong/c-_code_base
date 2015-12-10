@@ -29,12 +29,35 @@ int lengthOfLongestSubstring(string stringS) {
         return 0;
     }
     
+    unordered_map<char, int> charTable;
+    int maxLength = 1;
+    int pathBegin = 0;
+    int pathEnd = 0;
     
-    return 0;
+    while(pathEnd < stringS.length())
+    {
+      if(charTable.find(stringS[pathEnd]) != charTable.end() && charTable[stringS[pathEnd]] >= pathBegin)
+      {
+         pathBegin = charTable[stringS[pathEnd]] + 1;
+      }
+         maxLength = max(maxLength, pathEnd - pathBegin +1);
+         charTable[stringS[pathEnd]] = pathEnd;
+         pathEnd++;
+      
+    }
+    
+    return maxLength;
 }
 
 int main(int argc, const char * argv[]) {
-
-  
+    
+    string str("bbbbb");
+    int result = lengthOfLongestSubstring(str);
+    cout << result << endl;
+    
+    string str1("abcabcbb");
+    int result1 = lengthOfLongestSubstring(str1);
+    cout << result1 << endl;
+    
     return 0;
 }
