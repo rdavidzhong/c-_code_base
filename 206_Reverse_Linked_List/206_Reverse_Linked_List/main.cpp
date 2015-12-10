@@ -52,21 +52,6 @@ void Insert(int newData){
     temp2->next = temp1;
 }
 
-
-ListNode* reverseList(ListNode* head)
-{
-    ListNode *prev = NULL;
-    ListNode* temp;
-    while (head != NULL)
-    {
-        temp = head->next;
-        head->next = prev;
-        prev = head;
-        head = temp;
-    }
-   return prev;
-}
-
 void Print(ListNode* list){
     
     cout << "List is: ";
@@ -78,6 +63,21 @@ void Print(ListNode* list){
     printf("\n");
 }
 
+// Reverse List solution
+ListNode* reverseList(ListNode* head)
+{
+    ListNode *prev = NULL;
+    ListNode* temp;
+    while (head != NULL)
+    {
+        temp = head->next;
+        head->next = prev;
+        prev = head;
+        head = temp;
+    }
+    return prev;
+}
+
 int main(int argc, const char * argv[]) {
     
     head = NULL;
@@ -86,7 +86,10 @@ int main(int argc, const char * argv[]) {
     {
         Insert(i);
     }
+    cout << "--  List  --" << endl;
+    
     Print(head);
+    cout << "--Reverse List--" << endl;
     head = reverseList(head);
     Print(head);
     
