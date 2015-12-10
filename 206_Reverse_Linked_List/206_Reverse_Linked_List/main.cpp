@@ -30,6 +30,29 @@ struct ListNode {
      ListNode(int x) : val(x), next(NULL) {}
 };
 
+struct ListNode* head;
+
+void Insert(int newData){
+    
+    ListNode* temp1 = new ListNode(20);
+    temp1->val = newData;
+    temp1->next = NULL;
+    
+    if (head == NULL){ // empty list
+        head = temp1;
+        return;
+    }
+    
+    ListNode* temp2 = new ListNode(20);
+    temp2 = head;
+    while(temp2->next != NULL){
+        temp2 = temp2->next;
+    }
+    
+    temp2->next = temp1;
+}
+
+
 ListNode* reverseList(ListNode* head)
 {
     ListNode *prev = NULL;
@@ -44,9 +67,28 @@ ListNode* reverseList(ListNode* head)
    return prev;
 }
 
+void Print(ListNode* list){
+    
+    cout << "List is: ";
+    while(list != NULL)
+    {
+        printf(" %d",list->val);
+        list = list->next;
+    }
+    printf("\n");
+}
 
 int main(int argc, const char * argv[]) {
     
+    head = NULL;
+    
+    for (int i = 0; i < 10; i++)
+    {
+        Insert(i);
+    }
+    Print(head);
+    head = reverseList(head);
+    Print(head);
     
     return 0;
 }
