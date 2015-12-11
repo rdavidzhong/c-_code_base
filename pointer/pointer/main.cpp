@@ -44,3 +44,22 @@ int main(int argc, const char * argv[]) {
     
     return 0;
 }
+
+/* -- Results
+ 
+ var - Value of var
+ 10
+ 
+ *p - Value of p
+ 10
+ 
+ &var - Address of var
+ 0x7fff5fbff71c
+ 
+ p - Address of var
+ 0x7fff5fbff71c
+ 
+ &p - Address of p
+ 0x7fff5fbff710
+ 
+ */
