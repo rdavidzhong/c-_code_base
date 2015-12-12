@@ -38,6 +38,16 @@ using namespace std;
 
 bool isPalindrome(int x) {
     
+    if(x < 0)
+    {
+        return false;
+    }
+    
+    
+
+    
+    return true;
+    
 }
 
 int main(int argc, const char * argv[]) {
