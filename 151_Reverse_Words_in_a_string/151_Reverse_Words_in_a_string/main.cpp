@@ -26,10 +26,20 @@
 using namespace std;
 
 void reverseWords(string &s) {
- 
+
+    int wordlength = (int)s.length();
+    if (wordlength == 0 || wordlength == 1)
+    {
+        return;
+    }
+        
 }
 
 int main(int argc, const char * argv[]) {
 
+    string str("a");
+    reverseWords(str);
+    cout << str << endl;
+    
     return 0;
 }
