@@ -43,8 +43,41 @@ bool isPalindrome(int x) {
         return false;
     }
     
+    int div = 1;
     
-
+    cout << "1 " << div << endl;
+    
+    while(x/div >= 10)
+    {
+        div = div * 10;
+        cout << "2 " << div << endl;
+        
+    }
+    
+    while(x > 0)
+    {
+        int left = x/div;    //First digit
+        cout << "left-" << left << endl;
+        
+        int right = x % 10; // Represent last digit of the whole number
+         cout << "right-" << right << endl;
+        
+        if(left != right) return false;
+        
+        x = x%div/10;
+        cout << "3 " << div << endl;
+        
+        div = div / 100;
+        
+        cout << "4 " << div << endl;
+        /*
+         2332
+         
+         2332%div /10 = 123
+         div = div / 100
+         div = 1/100 = 0.01
+         */
+    }
     
     return true;
     
@@ -52,5 +85,13 @@ bool isPalindrome(int x) {
 
 int main(int argc, const char * argv[]) {
 
+    int x =  2332;
+    if (isPalindrome(x))
+    {
+        cout << "True" << endl;
+    } else {
+        
+        cout << "false" << endl;
+    }
     return 0;
 }
