@@ -20,6 +20,5 @@ int main(int argc, const char * argv[]) {
     cout << dArray[1][0] << endl;
     cout << dArray[1][1] << endl;
     
-    
     return 0;
 }
