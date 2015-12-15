@@ -48,7 +48,30 @@ vector<int> twoSum(vector<int>& nums, int target) {
     return result;
 }
 
+// Other better solution
 
+/*
+vector<int> twoSum(vector<int>& nums, int target) {
+    vector<int> ns=nums;
+    sort(ns.begin(), ns.end());
+    int a=0, b=ns.size()-1;
+    
+    while (a < b)
+        if (ns[a]+ns[b] > target) b--;
+        else if (ns[a]+ns[b] < target) a++;
+        else break;
+    
+    vector<int> ans;
+    for (int i=0; i<nums.size(); i++) {
+        if (nums[i]==ns[a]) ans.push_back(i+1);
+        else if (nums[i]==ns[b]) ans.push_back(i+1);
+    }
+    if (ans[0]>ans[1])
+        swap(ans[0], ans[1]);
+    return ans;
+}
+*/
+ 
 
 int main() {
     return 0;
