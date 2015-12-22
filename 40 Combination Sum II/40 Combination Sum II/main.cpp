@@ -28,17 +28,72 @@
  Hide Tags Array Backtracking
  Show Similar Problems
 
+ Thanks to siddontang for the solution.
  */
+
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
-vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+vector<vector<int> > vv;
+
+void dfs(vector<int>& v, int level, vector<int>& num, int target) {
+    if(target == 0) {
+        vv.push_back(v);
+        return;
+    } else if(target < 0) {
+        return;
+    }
     
+    for(int i = level; i < num.size(); i++) {
+        if(!v.empty() && v.back() > num[i]) {
+            continue;
+        }
+        
+        
+        v.push_back(num[i]);
+        dfs(v, i + 1, num, target - num[i]);
+        v.pop_back();
+        
+        while(i < num.size() - 1 && num[i] == num[i + 1]) {
+            i++;
+        }
+    }
+}
+
+vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+
+    sort(candidates.begin(), candidates.end());
+    vector<int> v;
+    dfs(v, 1, candidates, target);
+    return vv;
+}
+
+
+template<typename T>
+void printVector(const vector<T>& a) {
+    for(int i = 0; i < a.size(); i++) {
+        cout << a[i] << "\t";
+    }
+    
+    cout << endl;
+}
+
+template<typename T>
+void printVector2(const vector<vector<T> >& a) {
+    
+    for(int i = 0; i < a.size(); i++) {
+        printVector(a[i]);
+    }
 }
 
 int main(int argc, const char * argv[]) {
  
+    vector<int> n({1, 2, 3});
+   
+    auto vv = combinationSum2(n, 4);
+    printVector2(vv);
+    
     return 0;
 }
