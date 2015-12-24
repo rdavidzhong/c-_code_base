@@ -66,7 +66,7 @@ void Print(ListNode* list){
 // Reverse List solution
 ListNode* reverseList(ListNode* head)
 {
-    ListNode *prev = NULL;
+    ListNode* prev = NULL;
     ListNode* temp;
     while (head != NULL)
     {
