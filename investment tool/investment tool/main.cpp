@@ -12,12 +12,21 @@
 
 using namespace std;
 
+//int intPercent(int Percent, int numDisplay)
+//{
+//    Percent = 0.01;
+//    return Percent/numDisplay;
+//}
+
 int main(int argc, const char * argv[]) {
     
     double price;
     double myprice;
     int shares;
     double cal;
+    int numDisplay = 10; // number of result display - Default is 10
+   // int Percent = 0.01; // 1% = price*1.01
+  //  int intPercent;// Increase percentage each time
     
     cout << "What's the price today?" << endl;
     cin >> price;
@@ -29,31 +38,40 @@ int main(int argc, const char * argv[]) {
     cin >> shares;
     
     cout << endl;
-    cout << "===Increment=== " << endl << endl;
+    cout << "======Increment====== " << endl << endl;
     
-    // 20 is 2%
-    for (int i = 1 ; i <= 20; i++)
+    //intPercent = Percent/numDisplay;
+    
+    for (int i = 1 ; i <= numDisplay; i++)
     {
-        cal = 1+0.001*i;
-        cout << i*0.1 << "% increase"<< endl;
+        // Every time increment 0.2%
+        cal = 1+0.002*i;
+        cout << i*0.2 << "% increase"<< endl;
+//        cal = 1+intPercent*i;
+//        cout << i*0.2 << "% increase"<< endl;
         cout << setprecision(4) << price*cal<< endl;
         cout << "Gain per share: " << setprecision(4) << price*cal-myprice << endl;
         cout << "Total gain: " << setprecision(5) << (price*cal-myprice)*shares << endl << endl;
-        
     }
+
+    cout << endl;
     
+    return 0;
+}
+
+
 //    cout << "1% = " << setprecision(4) << price*1.01 << endl;
 //    cout << "Gain per share: " << setprecision(4) << price*1.01-myprice << endl;
 //    cout << "Total gain: " << setprecision(5) << (price*1.01-myprice)*shares << endl << endl;
-//    
+//
 //    cout << "1.2% = "  << price*1.012 <<endl;
 //    cout << "Gain per share: " << setprecision(4) << price*1.012-myprice << endl;
 //    cout << "Total gain: " << setprecision(5) << (price*1.012-myprice)*shares << endl << endl;
-//    
+//
 //    cout << "1.5% = " << price*1.015 <<endl;
 //    cout << "1.8% = " << price*1.018 <<endl;
 //    cout << "2% = " << price*1.02 <<endl;
-//    
+//
 //    cout << endl;
 //    cout << "Decrement " << endl;
 //    cout << "1% = " << price*0.99 <<endl;
@@ -61,11 +79,3 @@ int main(int argc, const char * argv[]) {
 //    cout << "1.5% = " << price*0.985 <<endl;
 //    cout << "1.8% = " << price*0.982 <<endl;
 //    cout << "2% = " << price*0.98 <<endl;
-    
-    cout << endl;
-    
-    
-    
-    
-    return 0;
-}
