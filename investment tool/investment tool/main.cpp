@@ -15,9 +15,9 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
     
-    double price = 35.5;
-    double myprice = 35.876;
-    int shares = 5900;
+    double price = 35.08;
+    double myprice = 34.88;
+    int shares = 500;
     double cal;
     int numDisplay = 10;
  
@@ -57,9 +57,9 @@ int main(int argc, const char * argv[]) {
     double newPrice;
     
     cout << "How many more can you buy?" << endl;
-//    cin >> more_share;
+    cin >> more_share;
     cout << "At what price?" << endl;
-//    cin >> lowerprice;
+    cin >> lowerprice;
   
     cost = (myprice * shares + lowerprice * more_share)/(shares+more_share);
     
